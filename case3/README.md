@@ -68,7 +68,7 @@ CSVをTSV（タブ区切り）にする
 ```
 % tail -n +2 ./c03.csv | nkf | head
 ```
-awkでcsvに任意の列を追加する - Qiita. 
+awkでcsvに任意の列を追加する - Qiita.  
 https://qiita.com/tochiji/items/284daafaedec941afdca
 
 
