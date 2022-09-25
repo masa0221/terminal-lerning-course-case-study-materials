@@ -50,7 +50,7 @@ gsed コマンドをでGNUと同じ仕様のsedが利用できます。
 
 ### 補足2
 ```
-% diff <(cat ./my-quiz/style.css) <(gsed -e 's/ansers/answers/g' ./my-quiz/style.css)
+% diff <(cat ./my-quiz/style.css) <(sed -e 's/ansers/answers/g' ./my-quiz/style.css)
 ```
 こうすると、丸かっこの中のコマンドの結果をファイルとして扱うことができます。  
 つまりコマンドの結果を比較できます。
