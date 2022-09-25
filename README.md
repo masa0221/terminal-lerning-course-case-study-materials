@@ -1,1 +1,28 @@
-# terminal-lerning-course-case-study-materials
+# ケーススタディ
+
+## ディレクトリ構成
+この資料は、ケーススタディのための資料です。  
+以下のような構成になっています。
+```
+.
+├── README.md
+├── case1
+│   ├── README.md
+│   ├── my-quiz
+│   └── sample-quiz
+├── case2
+│   ├── README.md
+│   └── access_log
+└── case3
+    ├── README.md
+    ├── c01.csv
+    ├── c02.csv
+    ├── c03.csv
+    └── futariijou3.csv
+```
+各ケースのためのサンプルファイルが入っています。
+
+## 使い方
+各ケーススタディを行う時は、カレントディレクトリを該当のディレクトリ以下に移動して操作しましょう。  
+また、各ケーススタディ用のREADME.mdファイルを読みながら進めてください。
+
