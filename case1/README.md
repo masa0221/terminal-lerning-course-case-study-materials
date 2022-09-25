@@ -29,17 +29,17 @@ diff コマンドはディレクトリも比較できます。
 
 sed(stream-editor)コマンドを使うと大量のファイルも一気に書き換え可能です。
 
-書式 macOS(BSD)の場合:  
+書式 macOS(BSDのsed)の場合:  
 ```
 sed -i '' -e 's/対象文字の正規表現/対象文字の置換後の文字/g' 対象ファイルパス
 ```
 
-書式 Ubuntu(GNU)の場合:  
+書式 Ubuntu(GNUのsed)の場合:  
 ```
 sed -i -e 's/対象文字の正規表現/対象文字の置換後の文字/g' 対象ファイルパス
 ```
 
-例 Ubuntu(GNU)の場合: 
+例 Ubuntu(GNUのsed)の場合: 
 ```sh
 % sed -i -e 's/ansers/answers/g' ./my-quiz/style.css
 ```
@@ -63,7 +63,7 @@ https://en.wikipedia.org/wiki/Process_substitution
 1. grep で対象のファイルを探しファイル名を一覧にする
 2. xargs を使って sed にファイル名を渡して置換する
 
-例 Ubuntu(GNU)の場合: 
+例 Ubuntu(GNUのsed)の場合: 
 ```sh
 % grep -r '<br />' . -l --include "*html" | xargs sed -i -e 's/<br \/>/<br>/g'
 ```
