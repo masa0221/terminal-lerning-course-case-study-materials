@@ -73,7 +73,7 @@ https://en.wikipedia.org/wiki/Process_substitution
 ### 補足1
 sed の 引数が分かりにくい時は以下のように書くこともできます。
 ```
-% grep -r '<br />' . -l --include "*html" | xargs sed -i -e 's#<br \/>#<br>#g'
+% grep -r '<br />' . -l --include "*html" | xargs sed -i -e 's#<br />#<br>#g'
 ```
 区切り文字を / から # に変えることができます。
 
