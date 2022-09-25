@@ -16,7 +16,7 @@ jobs:
 
       - name: Create tarball
         run:
-          tar cvzf terminal-lerning-course-case-study-materials.tar.gz ./
+          tar cvzf --exclude-vcs terminal-lerning-course-case-study-materials.tar.gz ./
 
       - name: Deploy to S3
         env:
