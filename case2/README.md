@@ -56,17 +56,17 @@ awk は特定のパターンを処理するための言語です。
 
 head でテストをする
 ```
-% head access_log | awk '{ print  $1 }' | sort | uniq -c | sort -nr
+% head access_log | awk '{ print $1 }' | sort | uniq -c | sort -nr
 ```
 
 ログ全体の件数を確認
 ```
-% cat access_log | awk '{ print  $1 }' | sort | uniq -c | sort -nr
+% cat access_log | awk '{ print $1 }' | sort | uniq -c | sort -nr
 ```
 
 上位のものだけを出力
 ```
-% cat access_log | awk '{ print  $1 }' | sort | uniq -c | sort -nr | head
+% cat access_log | awk '{ print $1 }' | sort | uniq -c | sort -nr | head
 ```
 
 ### 補足
