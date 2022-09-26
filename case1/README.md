@@ -74,6 +74,7 @@ grep -r '<br />' . -l --include "*html" | xargs sed -i -e 's/<br \/>/<br>/g'
 - grepのオプション
   - `-l` ファイル名のみを表示
   - `--include` 対象ファイルのパターンを指定
+
 ※ macOSの場合は、 `gsed` を使うか、 `sed` の `-i` オプションを `-i ''` に変えましょう
 
 
