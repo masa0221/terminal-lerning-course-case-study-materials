@@ -55,7 +55,7 @@ echo "foo,bar,baz" | awk -F, '{ print $2 }'
 
 ## STEP3. データの件数を数える
 
-head 件数を絞ってテストをする
+head で件数を絞ったデータを使ってテストをする
 ```
 head access_log | awk '{ print $1 }' | sort | uniq -c | sort -nr
 ```
