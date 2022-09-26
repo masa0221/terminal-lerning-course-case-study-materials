@@ -34,7 +34,7 @@ LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\""
 https://httpd.apache.org/docs/2.4/ja/mod/mod_log_config.html
 
 
-### 補足2: awk
+### 補足2: awk(オーク)
 awk は特定のパターンを処理するための言語です。  
 特定のルールがある文字の操作を行いやすいので以下の例だけでも覚えておくと損はないでしょう。
 
