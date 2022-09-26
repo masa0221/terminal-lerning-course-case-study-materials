@@ -69,11 +69,8 @@ cat ./c03.csv | nkf | grep -v '総数には年齢「不詳」を含む' | awk -F
 ```
 tail -n +2 ./c03.csv | nkf | head
 ```
-awkでcsvに任意の列を追加する - Qiita.  
-https://qiita.com/tochiji/items/284daafaedec941afdca
 
-
-### 補足: 標準出力の内容をクリップボードにコピーする
+### 補足1: 標準出力の内容をクリップボードにコピーする
 macOSの場合
 ```
 echo 'hello' | pbcopy
@@ -83,3 +80,7 @@ Windows(WSL)の場合
 ```
 echo 'hello' | clip.exe
 ```
+
+### 補足2: 追加情報
+awkでcsvに任意の列を追加する - Qiita.  
+https://qiita.com/tochiji/items/284daafaedec941afdca
