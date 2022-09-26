@@ -55,7 +55,7 @@ cat ./c01.csv | nkf
 
 CSVをTSV（タブ区切り）にする
 ```
-head ./c03.csv | nkf | head | tr ',' '\t'
+head ./c03.csv | nkf | tr ',' '\t'
 ```
 
 沖縄県の情報だけ出力
