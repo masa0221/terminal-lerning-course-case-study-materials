@@ -62,9 +62,12 @@ PATHで指定したディレクトリ以下のファイルを変更前の状態�
 ```
 git restore .
 ```
+※ 全て元に戻したい場合は、カレントディレクトリを `terminal-lerning-course-case-study-materials` にして上記を実行してください。  
+（あるいは、 `terminal-lerning-course-case-study-materials` のパスを指定する）
 
 ### `git clean`: 管理していないファイル、ディレクトリを削除
 ```
 git clean -df
 ```
-
+- `-d` ディレクトリも削除対象にする
+- `-f` 確認のプロンプトを表示せずに削除
