@@ -15,14 +15,14 @@ diff コマンドを使うとファイルを比較することができます。
 
 書式:  
 ```
-diff FILE1 FILE2
+% diff FILE1 FILE2
 ```
 
 diff コマンドはディレクトリも比較できます。
 
 例
 ```sh
-% diff my-quiz sample-quiz
+diff my-quiz sample-quiz
 ```
 
 ## STEP2. ファイルの内容を書き換えてみよう
@@ -31,17 +31,17 @@ sed(stream-editor)コマンドを使うと大量のファイルも一気に書�
 
 書式 macOS(BSDのsed)の場合:  
 ```
-sed -i '' -e 's/対象文字の正規表現/対象文字の置換後の文字/g' 対象ファイルパス
+% sed -i '' -e 's/対象文字の正規表現/対象文字の置換後の文字/g' 対象ファイルパス
 ```
 
 書式 Ubuntu(GNUのsed)の場合:  
 ```
-sed -i -e 's/対象文字の正規表現/対象文字の置換後の文字/g' 対象ファイルパス
+% sed -i -e 's/対象文字の正規表現/対象文字の置換後の文字/g' 対象ファイルパス
 ```
 
 例 Ubuntu(GNUのsed)の場合: 
 ```sh
-% sed -i -e 's/ansers/answers/g' ./my-quiz/style.css
+sed -i -e 's/ansers/answers/g' ./my-quiz/style.css
 ```
 
 ### 補足1
@@ -50,7 +50,7 @@ gsed コマンドをでGNUと同じ仕様のsedが利用できます。
 
 ### 補足2
 ```
-% diff <(cat ./my-quiz/style.css) <(sed -e 's/ansers/answers/g' ./my-quiz/style.css)
+diff <(cat ./my-quiz/style.css) <(sed -e 's/ansers/answers/g' ./my-quiz/style.css)
 ```
 こうすると、丸かっこの中のコマンドの結果をファイルとして扱うことができます。  
 つまりコマンドの結果を比較できます。
@@ -65,7 +65,7 @@ https://en.wikipedia.org/wiki/Process_substitution
 
 例 Ubuntu(GNUのsed)の場合: 
 ```sh
-% grep -r '<br />' . -l --include "*html" | xargs sed -i -e 's/<br \/>/<br>/g'
+grep -r '<br />' . -l --include "*html" | xargs sed -i -e 's/<br \/>/<br>/g'
 ```
 ※ macOSの場合は、 `gsed` を使うか、 `sed` の `-i` オプションを `-i ''` に変えましょう
 
@@ -73,7 +73,7 @@ https://en.wikipedia.org/wiki/Process_substitution
 ### 補足1
 sed の 引数が分かりにくい時は以下のように書くこともできます。
 ```
-% grep -r '<br />' . -l --include "*html" | xargs sed -i -e 's#<br />#<br>#g'
+grep -r '<br />' . -l --include "*html" | xargs sed -i -e 's#<br />#<br>#g'
 ```
 区切り文字を / から # に変えることができます。
 
