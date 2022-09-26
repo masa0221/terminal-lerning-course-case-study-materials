@@ -21,6 +21,12 @@ file --mime c01.csv
 head c01.csv | iconv -f SHIFT-JIS -t UTF-8
 ```
 
+対応している文字コードを確認する
+```
+iconv -l
+```
+※多いのでgrepなどでフィルターしましょう
+
 ### 方法2: nkf を使う
 日本語ファイルで文字コードが不明な場合は、nkfを使うと良い
 
