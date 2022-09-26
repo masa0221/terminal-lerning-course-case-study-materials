@@ -9,8 +9,8 @@ case1
 ```
 
 
-## STEP1. 差分を比較してみよう
-
+## STEP1. 状況を確認してみよう
+### 1.1. 正しい状態のファイルとの差分を確認する
 diff コマンドを使うとファイルを比較することができます。
 
 書式:  
@@ -26,6 +26,28 @@ diff -uw my-quiz sample-quiz
 ```
 - `-u` 差分があった箇所の前後も表示
 - `-w` whitespace(空白)を無視
+
+### 1.2. 誤字を検索する
+grep で検索する
+```
+grep -r ansers .
+```
+
+ag （the-silver-searcher） で検索する
+```
+ag ansers
+```
+
+### 1.3. ファイル名のみを表示する
+grep で検索でマッチしたファイルのパスを表示
+```
+grep -r ansers . -l
+```
+
+ag （the-silver-searcher） で検索でマッチしたファイルのパスを表示
+```
+ag ansers -l
+```
 
 ## STEP2. ファイルの内容を書き換えてみよう
 
@@ -64,8 +86,8 @@ https://en.wikipedia.org/wiki/Process_substitution
 `
 
 ## STEP3. 複数ファイルの内容を書き換えてみよう
-1. grep で対象のファイルを探しファイル名を一覧にする
-2. xargs を使って sed にファイル名を渡して置換する
+- 3.1. grep で対象のファイルを探しファイル名を一覧にする
+- 3.2. xargs を使って sed にファイル名を渡して置換する
 
 例 Ubuntu(GNUのsed)の場合: 
 ```sh
