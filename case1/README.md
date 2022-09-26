@@ -69,11 +69,13 @@ https://en.wikipedia.org/wiki/Process_substitution
 
 例 Ubuntu(GNUのsed)の場合: 
 ```sh
-grep -r '<br />' . -l --include "*html" | xargs sed -i -e 's/<br \/>/<br>/g'
+grep -r '<br />' . -l --include "*html" | xargs -p sed -i -e 's/<br \/>/<br>/g'
 ```
 - grepのオプション
   - `-l` ファイル名のみを表示
   - `--include` 対象ファイルのパターンを指定
+- xargsのオプション
+  - `-p` 実行前に確認(yかYで実行する)
 
 ※ macOSの場合は、 `gsed` を使うか、 `sed` の `-i` オプションを `-i ''` に変えましょう
 
