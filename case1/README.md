@@ -43,11 +43,20 @@ grep で検索でマッチしたファイルのパスを表示
 ```
 grep -r ansers . -l
 ```
+さらに `--include "*html"` をつけると html だけに絞ることができる
 
 ag （the-silver-searcher） で検索でマッチしたファイルのパスを表示
 ```
 ag ansers -l
 ```
+さらに `-G html` をつけると html だけに絞ることができる
+
+
+grep -v を使って特定の対象を省く手もある
+```
+ag ansers -l | grep -v README.md
+```
+
 
 ## STEP2. ファイルの内容を書き換えてみよう
 
