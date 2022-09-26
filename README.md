@@ -47,6 +47,18 @@ apt install git
 git clone https://github.com/masa0221/terminal-lerning-course-case-study-materials.git
 ```
 
+### `git status`: 現在の状態を確認
+普通の表示(説明も表示される)
+```
+git status
+```
+
+短いフォーマットで表示(必要最低限の文字で表示される)
+```
+git status --short
+```
+
+
 ### `git diff`: 変更した内容を比較（バージョン管理されていない変更とバージョン管理されている状態を比較)
 ```
 git diff
