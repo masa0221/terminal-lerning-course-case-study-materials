@@ -8,19 +8,19 @@
 いきなり検索するより、ファイルのサイズはざっくりと把握しておきましょう。
 
 ```sh
-% wc -l ./access_log
+wc -l ./access_log
 ```
 
 
 ## STEP2. ログのフォーマットを理解する
 ログ内容がどのようなものか確認をするために、先頭だけ表示してみましょう。
 ```sh
-% head access_log
+head access_log
 ```
 
 次に必要なフィールドだけ出力してみましょう
 ```
-% head access_log | awk '{ print $1 }'
+head access_log | awk '{ print $1 }'
 ```
 
 ### 補足1: Apacheのログフォーマットについて
@@ -40,12 +40,12 @@ awk は特定のパターンを処理するための言語です。
 
 例： スペース区切りの文字の3番目を出力
 ```
-% echo "foo bar baz" | awk '{ print $3 }'
+echo "foo bar baz" | awk '{ print $3 }'
 ```
 
 例： カンマ区切りの文字の2番目を出力
 ```
-% echo "foo,bar,baz" | awk -F, '{ print $2 }'
+echo "foo,bar,baz" | awk -F, '{ print $2 }'
 ```
 ※ -F オプションで区切り文字を指定している
 
@@ -56,17 +56,17 @@ awk は特定のパターンを処理するための言語です。
 
 head でテストをする
 ```
-% head access_log | awk '{ print $1 }' | sort | uniq -c | sort -nr
+head access_log | awk '{ print $1 }' | sort | uniq -c | sort -nr
 ```
 
 ログ全体の件数を確認
 ```
-% cat access_log | awk '{ print $1 }' | sort | uniq -c | sort -nr
+cat access_log | awk '{ print $1 }' | sort | uniq -c | sort -nr
 ```
 
 上位のものだけを出力
 ```
-% cat access_log | awk '{ print $1 }' | sort | uniq -c | sort -nr | head
+cat access_log | awk '{ print $1 }' | sort | uniq -c | sort -nr | head
 ```
 
 ### 補足
@@ -74,17 +74,17 @@ head でテストをする
 
 例: 上位20件を表示
 ```
-% cat access_log | awk -F\" '{ print $2 }' | sort | uniq -c | sort -nr | head -n 20
+cat access_log | awk -F\" '{ print $2 }' | sort | uniq -c | sort -nr | head -n 20
 ```
 
 例: GETのリクエストだけに絞る
 ```
-% cat access_log | awk -F\" '{ print $2 }' | sort | uniq -c | sort -nr | grep GET | head
+cat access_log | awk -F\" '{ print $2 }' | sort | uniq -c | sort -nr | grep GET | head
 ```
 
 例: GETやPOST以外のリクエストだけに絞る
 ```
-% cat access_log | awk -F\" '{ print $2 }' | sort | uniq -c | sort -nr | grep -vE 'GET|POST' | head
+cat access_log | awk -F\" '{ print $2 }' | sort | uniq -c | sort -nr | grep -vE 'GET|POST' | head
 ```
 
 
