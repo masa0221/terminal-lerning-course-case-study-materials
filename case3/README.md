@@ -51,12 +51,14 @@ cat ./c01.csv | nkf
 ```
 
 
-## STEP3. CSVやTSVを好きに加工する
+## STEP3. CSVやTSVを自由に加工する
 
 CSVをTSV（タブ区切り）にする
 ```
 head ./c03.csv | nkf | tr ',' '\t'
 ```
+※用途例: クリップボードにコピーし、Excelやスプレッドシートに貼り付け
+
 
 沖縄県の情報だけ出力
 ```
@@ -70,3 +72,14 @@ tail -n +2 ./c03.csv | nkf | head
 awkでcsvに任意の列を追加する - Qiita.  
 https://qiita.com/tochiji/items/284daafaedec941afdca
 
+
+### 補足: 標準出力の内容をクリップボードにコピーする
+macOSの場合
+```
+echo 'hello' | pbcopy
+```
+
+Windows(WSL)の場合
+```
+echo 'hello' | clip.exe
+```
