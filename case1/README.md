@@ -22,8 +22,10 @@ diff コマンドはディレクトリも比較できます。
 
 例
 ```sh
-diff my-quiz sample-quiz
+diff -uw my-quiz sample-quiz
 ```
+- `-u` 差分があった箇所の前後も表示
+- `-w` whitespace(空白)を無視
 
 ## STEP2. ファイルの内容を書き換えてみよう
 
@@ -43,6 +45,8 @@ sed(stream-editor)コマンドを使うと大量のファイルも一気に書�
 ```sh
 sed -i -e 's/ansers/answers/g' ./my-quiz/style.css
 ```
+- `-i` そのファイル自体を編集 (macOSの場合　`-i ''` で同じ意味になる)
+- `-e` sed のコマンドを指定
 
 ### 補足1
 macOSでGNUのsedを使いたい場合は、 `brew install gsed` でインストールをしましょう。  
@@ -67,6 +71,9 @@ https://en.wikipedia.org/wiki/Process_substitution
 ```sh
 grep -r '<br />' . -l --include "*html" | xargs sed -i -e 's/<br \/>/<br>/g'
 ```
+- grepのオプション
+  - `-l` ファイル名のみを表示
+  - `--include` 対象ファイルのパターンを指定
 ※ macOSの場合は、 `gsed` を使うか、 `sed` の `-i` オプションを `-i ''` に変えましょう
 
 
@@ -77,5 +84,5 @@ grep -r '<br />' . -l --include "*html" | xargs sed -i -e 's#<br />#<br>#g'
 ```
 区切り文字を / から # に変えることができます。
 
-- 区切り文字(/): `s/regex/string/g`
-- 区切り文字(#): `s#regex#string#g`
+- 区切り文字(`/`): `s/regex/string/g`
+- 区切り文字(`#`): `s#regex#string#g`
